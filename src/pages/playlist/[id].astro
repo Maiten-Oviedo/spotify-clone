@@ -1,0 +1,62 @@
+---
+import CardPlayButton from '../../components/CardPlayButton'
+import MusicTable from '../../components/MusicTable.astro'
+import Layout from '../../layouts/Layout.astro'
+import { allPlaylists, songs } from '../../lib/data'
+
+const { id } = Astro.params
+
+const playlist = allPlaylists.find(playlist => playlist.id === id)
+const songsInPlaylist = songs.filter(song => song.albumId === playlist.albumId)
+---
+
+<Layout title="Spotify Clone">
+  <div class="flex flex-col w-full p-4">
+    <div
+      class="relative bg-zinc-900 flex flex-col"
+      transition:name=`playlist ${id} box`
+    >
+      <header class="flex z-10 gap-2 overflow-hidden">
+        <picture class="aspect-square size-36">
+          <img
+            src={playlist?.cover}
+            alt={`Cover of ${playlist?.title} by ${playlist?.artists}`}
+            class="object-cover w-full h-full rounded-md"
+            transition:name=`playlist ${playlist?.id} image`
+          />
+        </picture>
+
+        <div class="flex flex-col justify-between p-2">
+          <div>
+            <h4 class="text-zinc-400">Playlist</h4>
+            <h3
+              class="text-zinc-100 truncate text-5xl font-bold h-full"
+              transition:name=`playlist ${playlist?.id} title`
+            >
+              {playlist?.title}
+            </h3>
+          </div>
+          <p
+            class="text-base text-zinc-400"
+            transition:name=`playlist ${playlist?.id} artists`
+          >
+            {playlist?.artists}
+          </p>
+          <p>
+            <span class="text-zinc-100"
+              >{songsInPlaylist.length} canciones,</span
+            ><span class="text-zinc-100/60"> cerca de 3 h 12 min</span>
+          </p>
+        </div>
+      </header>
+    </div>
+    <section class="pt-6 flex flex-col items-start gap-4">
+      <CardPlayButton id={id} size="big" client:load />
+      <MusicTable songs={songsInPlaylist} />
+    </section>
+    <div
+      class="absolute inset-0 bg-gradient-to-t -z-10 from-zinc-900 to-zinc-900/80"
+    >
+    </div>
+  </div>
+</Layout>

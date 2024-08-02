@@ -1,0 +1,22 @@
+---
+import PlaylistItemCard from '../components/PlaylistItemCard.astro'
+import Layout from '../layouts/Layout.astro'
+import { playlists } from '../lib/data'
+---
+
+<Layout title="Spotify Clone">
+  <div class="relative bg-blue-800 w-full p-1 pt-12 transition-all">
+    <div class="relative z-10">
+      <h2 class="font-bold text-2xl p-2 text-zinc-100">
+        Hecho para Maiten Oviedo
+      </h2>
+    </div>
+    <div class="relative z-10">
+      <ul class="flex flex-wrap">
+        {playlists.map(playlist => <PlaylistItemCard playlist={playlist} />)}
+      </ul>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 to-zinc-900/80">
+    </div>
+  </div>
+</Layout>
