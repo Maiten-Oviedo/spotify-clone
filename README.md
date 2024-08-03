@@ -1,59 +1,49 @@
-<<<<<<< HEAD
-# Astro Starter Kit: Basics
+# Spotify Clone
 
-```sh
-npm create astro@latest -- --template basics
-```
+Este proyecto es una clonación de la interfaz de usuario de Spotify, creada utilizando [Astro](https://astro.build/) para la generación de sitios estáticos y [React](https://reactjs.org/) para la gestión de componentes interactivos. La aplicación permite a los usuarios explorar listas de reproducción, reproducir música y controlar el volumen.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+![image](https://github.com/user-attachments/assets/f8c2c499-da80-4282-919d-10bfae12485d)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Descripción
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+El proyecto es una aplicación web que simula una interfaz de usuario similar a Spotify. Incluye funcionalidades básicas como la visualización de listas de reproducción, reproducción de canciones y control de volumen.
 
-## 🚀 Project Structure
+## Características
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Visualización de Listas de Reproducción**: Muestra las listas de reproducción disponibles con sus portadas y detalles.
+- **Reproducción de Música**: Permite la reproducción de canciones y el control del estado de reproducción.
+- **Control de Volumen**: Ajusta el volumen de la música en reproducción.
+- **Interfaz de Usuario Responsiva**: Diseñado para funcionar en diferentes tamaños de pantalla.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Tecnologías Utilizadas
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Astro**: Para la generación de sitios estáticos y el renderizado del lado del servidor.
+- **React**: Para la gestión de componentes interactivos y el estado de la aplicación.
+- **Tailwind CSS**: Para el diseño y estilización de la interfaz de usuario.
+- **Vercel**: Para el despliegue y hosting de la aplicación.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Instalación
 
-Any static assets, like images, can be placed in the `public/` directory.
+Sigue estos pasos para instalar y ejecutar el proyecto localmente:
 
-## 🧞 Commands
+1. **Clona el repositorio**:
 
-All commands are run from the root of the project, from a terminal:
+   ```bash
+   git clone https://github.com/Maiten-Oviedo/spotify-clone.git
+   ```
+2. **Navega al directorio del proyecto**:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+   ```bash
+   cd spotify-clone
+   ```
+3. **Instala las dependencias**:
 
-## 👀 Want to learn more?
+   ```bash
+   pnpm install
+   ```
+4. **Inicia el servidor de desarrollo**:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-=======
-# spotify-clone
-Un clone de Spotify creado con Astro
->>>>>>> b86b6c52ec36c46a3a65794a3772dd7f70712168
+   ```bash
+   pnpm run dev
+   ```
+**Luego abre tu navegador y visita http://localhost:4321 para ver la aplicación en acción**
