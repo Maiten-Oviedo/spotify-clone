@@ -16,7 +16,7 @@ export const playlists: Playlist[] = [
     title: "Chill Lo-Fi Music",
     color: colors.yellow,
     cover:
-      "https://imgs.search.brave.com/V1AcMCqqLr6i4EFx2ObKXtZiMwRUnIgaYXxNxxyOd2M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tYXJr/ZXRwbGFjZS5jYW52/YS5jb20vRUFFZ1Ft/X0p4MVUvMS8wLzE2/MDB3L2NhbnZhLXJv/c2EteS1kdXJhem5v/LXZpbmlsby1sb3Mt/OTAtYW5pbWUtY2Fu/Y2lvbmVzLWRlLWFt/b3ItcG9ydGFkYS1k/ZS1saXN0YS1kZS1y/ZXByb2R1Y2NpJUMz/JUIzbi1RY2FZbnRu/RDQtQS5qcGc",
+      "https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353",
     artists: ["NoSpirit", "Casiio"],
   },
   {
@@ -24,8 +24,7 @@ export const playlists: Playlist[] = [
     albumId: 2,
     title: "Lo-Fi Chill Session",
     color: colors.green,
-    cover:
-      "https://img.freepik.com/vector-gratis/ilustraciones-degradadas-baja-fidelidad_52683-84144.jpg?size=338&ext=jpg",
+    cover:"https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187",
     artists: ["Kupla", "Blue Fox"],
   },
   {

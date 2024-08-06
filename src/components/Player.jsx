@@ -54,7 +54,6 @@ const Player = () => {
   useEffect(() => {
     const { playlist, song } = currentMusic
 
-    console.log(`Current Music: ${song}`)
     if (song) {
       const src = `/music/${playlist?.id}/0${song?.id}.mp3`
       audioRef.current.src = src

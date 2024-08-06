@@ -1,0 +1,32 @@
+---
+import Back from '../icons/Back.astro'
+import GitHub from '../icons/GitHub.astro'
+---
+
+<nav class="relative z-10 flex justify-between items-center p-3">
+  <a href="/">
+    <Back
+      class="size-8 rounded-full p-2 text-zinc-100 bg-zinc-950/80 cursor-pointer"
+    />
+  </a>
+  <div class="flex gap-2">
+    <a
+      href="https://github.com/Maiten-Oviedo/spotify-clone"
+      rel="noreferrer noopener"
+      target="_blank"
+      class="bg-zinc-950/60 p-1 font-bold flex justify-center items-center text-sm text-zinc-100 rounded-2xl gap-2 px-4 hover:scale-105"
+    >
+      <GitHub class="text-zinc-100 size-4" /> Ver Código
+    </a>
+    <a
+      href="https://maiten-dev.vercel.app"
+      class="text-sm flex justify-center bg-zinc-950/60 items-center font-bold rounded-full p-1 cursor-pointer hover:scale-105"
+      rel="noreferrer noopener"
+      target="_blank"
+      ><span
+        class="flex justify-center items-center rounded-full size-6 bg-[#f573a0]"
+        >M</span
+      ></a
+    >
+  </div>
+</nav>

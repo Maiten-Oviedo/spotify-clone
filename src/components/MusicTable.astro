@@ -1,6 +1,7 @@
 ---
 import Clock from '../icons/Clock.astro'
 import { type Song } from '../lib/data'
+import SongPlayButton from './SongPlayButton.jsx'
 
 interface Props {
   songs: Song[]
@@ -23,8 +24,17 @@ const { songs } = Astro.props
     {
       songs.map((song, index) => {
         return (
-          <tr class="font-light text-sm text-zinc-400 hover:bg-white/10">
-            <td class="px-4 py-2 rounded-l-md font-bold w-5">{index + 1}</td>
+          <tr class="group font-light text-sm text-zinc-400 hover:bg-white/10">
+            <td class="group-hover:hidden px-4 py-2 rounded-l-md font-bold w-5">
+              {index + 1}
+            </td>
+            <td class="hidden group-hover:[display:revert] rounded-l-md font-bold w-5 justify-center">
+              <SongPlayButton
+                idAlbum={song.albumId}
+                idSong={song.id}
+                client:visible
+              />
+            </td>
             <td class="px-4 py-2 flex gap-2">
               <picture class="size-10">
                 <img src={song.image} alt={song.title} class="rounded-md" />

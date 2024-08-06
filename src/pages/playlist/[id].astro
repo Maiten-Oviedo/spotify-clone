@@ -1,6 +1,7 @@
 ---
 import CardPlayButton from '../../components/CardPlayButton'
 import MusicTable from '../../components/MusicTable.astro'
+import Nav from '../../components/Nav.astro'
 import Layout from '../../layouts/Layout.astro'
 import { allPlaylists, songs } from '../../lib/data'
 
@@ -8,15 +9,21 @@ const { id } = Astro.params
 
 const playlist = allPlaylists.find(playlist => playlist.id === id)
 const songsInPlaylist = songs.filter(song => song.albumId === playlist.albumId)
+
+// Color del backoround traido de la playlist
+const bgContainer = {
+  backgroundColor: `${playlist.color.accent}`,
+}
 ---
 
 <Layout title="Spotify Clone">
-  <div class="flex flex-col w-full p-4">
+  <div class="relative h-max flex flex-col w-full p-1" style={bgContainer}>
+    <Nav />
     <div
-      class="relative bg-zinc-900 flex flex-col"
+      class="relative z-10 flex flex-col p-3 mt-14"
       transition:name=`playlist ${id} box`
     >
-      <header class="flex z-10 gap-2 overflow-hidden">
+      <header class="flex gap-2 overflow-hidden">
         <picture class="aspect-square size-36">
           <img
             src={playlist?.cover}
@@ -50,13 +57,11 @@ const songsInPlaylist = songs.filter(song => song.albumId === playlist.albumId)
         </div>
       </header>
     </div>
-    <section class="pt-6 flex flex-col items-start gap-4">
+    <section class="relative z-10 pt-6 flex flex-col items-start gap-4 p-3">
       <CardPlayButton id={id} size="big" client:load />
       <MusicTable songs={songsInPlaylist} />
     </section>
-    <div
-      class="absolute inset-0 bg-gradient-to-t -z-10 from-zinc-900 to-zinc-900/80"
-    >
+    <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 to-zinc-900/80">
     </div>
   </div>
 </Layout>

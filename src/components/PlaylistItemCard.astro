@@ -19,15 +19,15 @@ const artistsString = artists.join(', ')
     group-hover:translate-y-0 group-hover:opacity-100
     z-10"
   >
-    <CardPlayButton id={id} size="small" client:visible />
+    <CardPlayButton id={id} size="medium" client:visible />
   </div>
 
   <a
     href={`/playlist/${id}`}
-    class="playlist-item relative gap-1 p-3 overflow-hidden items-start rounded-md hover:bg-zinc-500/10 flex flex-col w-44"
+    class="playlist-item relative gap-1 p-3 overflow-hidden items-start rounded-md hover:bg-zinc-500/10 flex flex-col max-w-52"
     transition:name=`playlist ${id} box`
   >
-    <picture class="flex-none">
+    <picture class="flex-none w-full">
       <img
         src={cover}
         alt={`Cover of ${title} by ${artistsString}`}

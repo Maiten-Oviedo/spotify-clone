@@ -8,7 +8,6 @@ const CardPlayButton = ({ id, size = 'small' }) => {
   const isPlayingPlaylist = isPlaying && currentMusic?.playlist.id === id
 
   const handleClick = () => {
-    console.log(id)
     if (isPlayingPlaylist) {
       setIsPlaying(false)
       return
@@ -21,12 +20,17 @@ const CardPlayButton = ({ id, size = 'small' }) => {
 
         setIsPlaying(true)
         setCurrentMusic({ songs, playlist, song: songs[0] })
-        console.log(`/api/get-info-playlist.json?id=${id}`)
       })
   }
 
-  const sizeButton = size === 'small' ? 'size-4' : 'size-9 p-2'
-
+  let sizeButton = ''
+  if (size === 'small') {
+    sizeButton = 'size-2'
+  } else if (size === 'medium') {
+    sizeButton = 'size-4'
+  } else {
+    sizeButton = 'size-8 p-2'
+  }
   return (
     <button
       onClick={handleClick}

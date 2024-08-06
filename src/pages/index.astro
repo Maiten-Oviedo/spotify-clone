@@ -1,21 +1,31 @@
 ---
+import Greeting from '../components/Greeting'
+import Nav from '../components/Nav.astro'
 import PlaylistItemCard from '../components/PlaylistItemCard.astro'
+import PlaylistMiniCard from '../components/PlaylistMiniCard.astro'
 import Layout from '../layouts/Layout.astro'
 import { playlists } from '../lib/data'
 ---
 
 <Layout title="Spotify Clone">
-  <div class="relative bg-blue-800 w-full p-1 pt-12 transition-all">
-    <div class="relative z-10">
+  <div class="relative bg-blue-800 w-full p-1 transition-all">
+    <Nav />
+    <section class="relative z-10 p-2">
+      <Greeting />
+      <ul class="flex flex-wrap gap-2 justify-start items-center mt-6 mb-6">
+        {playlists.map(playlist => <PlaylistMiniCard playlist={playlist} />)}
+      </ul>
+    </section>
+    <section class="relative z-10">
       <h2 class="font-bold text-2xl p-2 text-zinc-100">
-        Hecho para Maiten Oviedo
+        Hecho por Maiten Oviedo
       </h2>
-    </div>
-    <div class="relative z-10">
+    </section>
+    <section class="relative z-10">
       <ul class="flex flex-wrap">
         {playlists.map(playlist => <PlaylistItemCard playlist={playlist} />)}
       </ul>
-    </div>
+    </section>
     <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 to-zinc-900/80">
     </div>
   </div>
